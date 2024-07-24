@@ -15,9 +15,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class InitController {
-    @Autowired
-    private final ProductService service;
 
+    private final ProductService service;
+    @Autowired
     public InitController(ProductService service) {
         this.service = service;
     }
