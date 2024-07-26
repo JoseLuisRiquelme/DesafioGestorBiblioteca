@@ -1,6 +1,8 @@
 package model.service;
 
 import model.dto.Libro;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,6 +10,8 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService{
+
+    private static final Logger LOG = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     private List<Libro> products;
 
@@ -21,15 +25,18 @@ public class ProductServiceImpl implements ProductService{
 
     public ProductServiceImpl(List<Libro> products) {
         this.products = products;
+        LOG.info("Initialized ProductServiceImpl with custom products");
     }
 
     @Override
     public List<Libro> getAll() {
+        LOG.info("Called getAll");
         return products;
     }
 
     @Override
     public Libro getOne(int id) {
+        LOG.info("Called getOne() with id:{}",id);
         return products
                 .stream()
                 .filter(p->p.getId()==id)
@@ -39,17 +46,20 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public boolean create(Libro l) {
+        LOG.info("Called create() with Libro:{}",l);
         products.add(l);
         return true;
     }
 
     @Override
     public boolean upDate(Libro l) {
+        LOG.info("Called upDate() with Libro:{}",l);
         return false;
     }
 
     @Override
     public boolean delete(int id) {
+        LOG.info("Called delete() with id:{}",id);
         return false;
     }
 }
