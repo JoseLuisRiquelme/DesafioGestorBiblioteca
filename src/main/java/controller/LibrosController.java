@@ -1,7 +1,7 @@
 package controller;
 
 import model.dto.Libro;
-import model.service.ProductService;
+import model.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("/")
-public class InitController {
+public class LibrosController {
 
-    private final ProductService service;
+    private final ProductServiceImpl service;
     @Autowired
-    public InitController(ProductService service) {
+    public LibrosController(ProductServiceImpl service) {
         this.service = service;
     }
 
