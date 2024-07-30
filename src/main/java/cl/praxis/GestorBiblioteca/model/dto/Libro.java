@@ -1,4 +1,4 @@
-package model.dto;
+package cl.praxis.GestorBiblioteca.model.dto;
 
 public class Libro {
     private int id;

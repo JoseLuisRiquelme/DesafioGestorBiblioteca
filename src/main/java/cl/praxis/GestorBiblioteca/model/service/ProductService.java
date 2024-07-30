@@ -1,11 +1,10 @@
-package model.service;
+package cl.praxis.GestorBiblioteca.model.service;
 
-import model.dto.Libro;
+import cl.praxis.GestorBiblioteca.model.dto.Libro;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public interface ProductService {
 
 

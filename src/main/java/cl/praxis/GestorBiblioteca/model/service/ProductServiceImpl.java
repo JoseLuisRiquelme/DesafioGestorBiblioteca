@@ -1,6 +1,6 @@
-package model.service;
+package cl.praxis.GestorBiblioteca.model.service;
 
-import model.dto.Libro;
+import cl.praxis.GestorBiblioteca.model.dto.Libro;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

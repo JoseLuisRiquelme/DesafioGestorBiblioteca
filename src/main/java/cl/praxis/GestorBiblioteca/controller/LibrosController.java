@@ -1,8 +1,7 @@
-package controller;
+package cl.praxis.GestorBiblioteca.controller;
 
-import model.dto.Libro;
-import model.service.ProductServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import cl.praxis.GestorBiblioteca.model.dto.Libro;
+import cl.praxis.GestorBiblioteca.model.service.ProductServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,17 +14,19 @@ import java.util.List;
 @RequestMapping("/")
 public class LibrosController {
 
-    private final ProductServiceImpl service;
-    @Autowired
+    private  ProductServiceImpl service;
+
     public LibrosController(ProductServiceImpl service) {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public String products(Model model) {
-        List<Libro> productsList = service.getAll();
-        System.out.println("Number of products: " + productsList.size());
-        model.addAttribute("products", productsList);
+        List<Libro> listaLibros = service.getAll();
+        for (Libro l: listaLibros) {
+            System.out.println(l.toString());
+        }
+        model.addAttribute("listaLibros", listaLibros);
 
         return "index";
     }

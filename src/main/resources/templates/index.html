@@ -23,12 +23,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="product : ${products}">
-            <th th:text="${product.id}"></th>
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.category}"></td>
-            <td th:text="${product.description}"></td>
-            <td><a th:href="@{/products/{id}(id=${product.id})}">Edit</a></td>
+        <tr th:each="libro : ${listaLibros}">
+            <th th:text="${libro.id}"></th>
+            <td th:text="${libro.name}"></td>
+            <td th:text="${libro.category}"></td>
+            <td th:text="${libro.description}"></td>
+            <td><a th:href="@{/products/{id}(id=${libro.id})}">Edit</a></td>
         </tr>
         </tbody>
     </table>
